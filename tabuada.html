@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificando idade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #00554d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            position: relative;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-family: 'Inter';
+            font-weight: 800;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        section {
+            background-color: white;
+            padding-top: 0.5rem;
+            padding-left: 1rem;
+            margin-top: 1rem;
+            height: 15rem;
+            width: 24rem;
+            box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.748);
+            border-radius: 8px;
+
+        }
+
+        input {
+            margin: 0.5rem;
+            width: 5rem;
+        }
+
+        span {
+            font-family: 'Inter';
+            font-weight: 600;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Tabuada</h1>
+    </header>
+    <section>
+        <div class="form">
+            Número <input type="number" name="txtnum" id="txtnum">
+            <input type="button" value="Gerar" onclick="gerar()" id="butao">
+        </div>
+        <select name="tabuada" id="seltab" size="10"></select>
+    </section>
+    <script>
+        function gerar() {
+            let txtNum = document.querySelector('#txtnum')
+            let seltab = document.querySelector('#seltab')
+            let n = Number(txtNum.value);
+            if (txtNum.value.length == 0) {
+                alert('Digite algum número válido para gerar a tabuada!')
+            } else {
+                seltab.innerHTML = ''
+                for (let i = 1; i <= 10; i++) {
+                    let item = document.createElement('option');
+                    item.text = `${n} * ${i} = ${n*i}`
+                    item.value = `tab${i}`
+                    seltab.appendChild(item)
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

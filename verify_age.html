@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificando idade</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #00554d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            position: relative;
+            color: white;
+        }
+
+
+        h1 {
+            text-align: center;
+            font-family: 'Inter';
+            font-weight: 800;
+        }
+
+        section {
+            background-color: #008679;
+            padding-top: 0.5rem;
+            margin-top: 1rem;
+            flex-direction: column;
+            height: 6rem;
+            width: 24rem;
+            box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.748);
+            border-radius: 8px;
+        }
+
+        p {
+            margin-left: 1rem;
+            font-family: 'Inter';
+            font-weight: 600;
+        }
+        span{
+            font-family: 'Inter';
+            font-weight: 600; 
+        }
+
+        #butao{
+            margin-left: 9.6rem;
+            text-align: center;
+            width: 5rem;
+            border: none;
+            padding: 0.1rem;
+            cursor: pointer;
+            border-radius: 2;
+        }
+        #txtano{
+            width: 4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Verificador de idade e gênero</h1>
+    </header>
+    <section>
+        <div class="form">
+            <p>Ano de nascimento: <input type="number" name="txtano" id="txtano"></p>
+            <p>Gênero <label><input type="radio" name="gen" id="fem" checked> <label for="fem">Feminino</label>
+                    <input type="radio" name="gen" id="masc"> <label for="masc">Masculino</label></p>
+            <input type="button" value="VERIFICAR" onclick="verificar()" id="butao">
+        </div>
+        <div class="msg">
+            <p>Preencha os dados para verificação...</p>
+        </div>
+    </section>
+    <script>
+        function verificar() {
+            let mensagem = document.querySelector('div.msg');
+            mensagem.style.textAlign = 'center';
+            let body = document.getElementsByTagName('body')[0]
+            let sec = document.getElementsByTagName('section')[0]
+            let ano = document.getElementById('txtano')
+            let data = new Date();
+            let ano_atual = data.getFullYear();
+            if ((ano.value).length < 4 || ano.value > ano_atual) {
+                mensagem.innerHTML = '[ERRO]';
+            } else {
+                let radgen = document.getElementsByName('gen');
+                let idade = ano_atual - (ano.value)
+                mensagem.innerHTML = `<span>Você tem ${idade} anos</span>`;
+                if (radgen[0].checked) {
+                    mensagem.innerHTML += ' <span>e é uma mulher</span>';
+                    body.style.background = 'linear-gradient(74deg, rgba(125,1,1,1) 0%, rgba(147,0,0,1) 50%, rgba(62,0,0,1) 100%)';
+                    sec.style.background = 'rgba(62,0,0,1)'
+                } else if (radgen[1].checked) {
+                    mensagem.innerHTML += ' <span>e é um homem</span>';
+                    body.style.background = 'linear-gradient(74deg, rgba(0,164,38,1) 0%, rgba(0,139,33,1) 50%, rgba(0,59,14,1) 100%)';
+                    sec.style.background = 'rgba(0,59,14,1)'
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

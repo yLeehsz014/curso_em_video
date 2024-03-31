@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Identify hours</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: antiquewhite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            position: relative;
+            color: white;
+        }
+
+        header {
+            position: absolute;
+            top: 0;
+            margin: 5rem;
+        }
+
+        h1 {
+            text-align: center;
+            font-family: 'Inter';
+            font-weight: 800;
+        }
+
+        h2 {
+            margin-top: 1rem;
+            font-family: 'Inter';
+            font-weight: 800;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h3 {
+            font-family: 'Inter';
+            font-weight: 600;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        section {
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 20rem;
+            width: 28rem;
+            background-color: white;
+            box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.748);
+            border-radius: 8px;
+        }
+
+        img {
+            margin-top: 2rem;
+            width: 15rem;
+            height: 12rem;
+            border-radius: 8px;
+        }
+
+        footer {
+            margin-top: 0.2rem;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Horário</h1>
+    </header>
+    <section>
+        <div id="hours">
+            <h2>horario atual</h2>
+        </div>
+        <div id="msg">
+            <h3>...</h3>
+        </div>
+        <div id="img">
+            <img src="https://img.freepik.com/fotos-gratis/homem-de-vista-frontal-segurando-placas-de-boas-vindas_23-2149741721.jpg?size=626&ext=jpg&ga=GA1.1.2116175301.1700784000&semt=ais"
+                id="imagem">
+        </div>
+    </section>
+    <footer>&copy; Lethícia Almeida F.</footer>
+
+    <script>
+        let divH = document.getElementById('hours')
+        let divM = document.getElementById('msg')
+        let photo = document.getElementById('imagem')
+        let body = document.getElementsByTagName('body')[0]
+        let section = document.getElementsByTagName('section')[0]
+        let now = new Date()
+        let hours = now.getHours()
+          let minutes = now.getMinutes() 
+
+        if (minutes < 10) {
+            divH.innerHTML = `<h2>${hours}:0${minutes}</h2>`;
+        } else {
+            divH.innerHTML = `<h2>${hours}:${minutes}</h2>`;
+        }
+        if (hours <= 12) {
+            divM.innerHTML = `<h3>Bom dia!</h3>`;
+            body.style.background = '#ba7b2b';
+            section.style.background = '#dba648';
+            photo.src = 'https://img.freepik.com/fotos-premium/cafe-e-sanduiche-de-manha-na-vista-para-a-montanha_34237-226.jpg';
+
+        } else if (hours > 12 && hours < 18) {
+            divM.innerHTML = `<h3>Boa tarde!</h3>`;
+            body.style.background = '#872d19';
+            section.style.background = '#903e31';
+            photo.src = 'https://images.pexels.com/photos/2088211/pexels-photo-2088211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
+
+
+
+        } else {
+            divM.innerHTML = `<h3>Boa noite!</h3>`;
+            body.style.background = '#01091b';
+            section.style.background = '#1a1b37';
+            photo.src = 'https://cdn.pixabay.com/photo/2020/05/27/15/55/sky-5227770_1280.jpg';
+            
+        }
+    </script>
+</body>
+
+</html>
