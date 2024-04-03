@@ -6,24 +6,24 @@
     <title>Média dos aluno</title>
 </head>
 <body>
-    <h1>Calculando média</h1>
-    Nota 1 <input type="number" name="txtn1" id="txtn1">
-    Nota 2 <input type="number" name="txtn2" id="txtn2">
-    <input type="button" value="calcular media" onclick="calcMedia()">
+    <h1>Calculating avg</h1>
+    Grade 1 <input type="number" name="txtn1" id="txtn1">
+    Grade 2 <input type="number" name="txtn2" id="txtn2">
+    <input type="button" value="calculate avg" onclick="calcMedia()">
     <div class="res">
     </div>
     <script>
         function calcMedia() {
-            let nome = prompt("Qual seu nome?");
+            let nome = prompt("What's your name?");
             let txtn1 = document.querySelector('input#txtn1')
             let txtn2 = document.getElementById('txtn2')
             let divR = document.getElementsByClassName('res')[0]
             let n1 = Number(txtn1.value);
             let n2 = Number(txtn2.value);
             let media = (n1+n2)/2;
-            divR.innerHTML = `Olá ${nome.toUpperCase()}, bem vind!<br>` ;
-            divR.innerHTML += `1° nota: ${n1} | 2° nota: ${n2}.<br> `
-            divR.innerHTML += `Portanto, sua média foi: <strong>${media}</strong>`;
+            divR.innerHTML = `Olá ${nome.toUpperCase()}, Welcome!<br>` ;
+            divR.innerHTML += `1° grade: ${n1} | 2° grade: ${n2}.<br> `
+            divR.innerHTML += `Your average has been: <strong>${media}</strong>`;
         }
     </script>
 </body>
