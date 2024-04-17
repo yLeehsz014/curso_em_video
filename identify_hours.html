@@ -61,7 +61,7 @@
             height: 20rem;
             width: 28rem;
             background-color: white;
-            box-shadow: 5px 5px 15px 1px rgba(0, 0, 0, 0.748);
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
             border-radius: 8px;
         }
 
@@ -81,7 +81,7 @@
 
 <body>
     <header>
-        <h1>Horário</h1>
+        <h1>Brasilia time - Brasil</h1>
     </header>
     <section>
         <div id="hours">
@@ -113,13 +113,13 @@
             divH.innerHTML = `<h2>${hours}:${minutes}</h2>`;
         }
         if (hours <= 12) {
-            divM.innerHTML = `<h3>Bom dia!</h3>`;
+            divM.innerHTML = `<h3>Good morning!</h3>`;
             body.style.background = '#ba7b2b';
             section.style.background = '#dba648';
             photo.src = 'https://img.freepik.com/fotos-premium/cafe-e-sanduiche-de-manha-na-vista-para-a-montanha_34237-226.jpg';
 
         } else if (hours > 12 && hours < 18) {
-            divM.innerHTML = `<h3>Boa tarde!</h3>`;
+            divM.innerHTML = `<h3>Good afternoon!</h3>`;
             body.style.background = '#872d19';
             section.style.background = '#903e31';
             photo.src = 'https://images.pexels.com/photos/2088211/pexels-photo-2088211.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1';
@@ -127,7 +127,7 @@
 
 
         } else {
-            divM.innerHTML = `<h3>Boa noite!</h3>`;
+            divM.innerHTML = `<h3>Good night</h3>`;
             body.style.background = '#01091b';
             section.style.background = '#1a1b37';
             photo.src = 'https://cdn.pixabay.com/photo/2020/05/27/15/55/sky-5227770_1280.jpg';
