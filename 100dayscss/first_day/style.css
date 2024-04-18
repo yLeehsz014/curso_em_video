@@ -16,63 +16,64 @@ body {
 
 .frame {
     background: linear-gradient(280deg, rgba(172,0,0,1) 0%, rgba(159,0,0,1) 49%, rgba(69,0,0,1) 100%);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     width: 20rem;
     height: 18rem;
     border-radius: 5px;
+    padding-top: 5rem;
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    padding-top: 1.5rem;
-}
 
-.container {
-    width: 11rem;
-    height: 11rem;
-    position: relative;
 }
-
-.one-one {
-    margin-left: 0.55rem;
-    width: 1rem;
-    height: 2rem;
+.one-one,.one-two,.zero-one,.zero-two{
+    position: absolute;
+    top: 0;
+}
+ .one-one {
+    top: 4rem;
+    width: 0.9rem;
+    height: 1.7rem;
     border-radius: 2px;
-    background-color: rgba(255, 255, 255, 0.848);
+    background-color: #fff;
     transform: rotate(50deg);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 0;
 }
 
 .one-two {
-    margin-left: 1.5rem;
-    margin-top: -2rem;
-    width: 1.2rem;
+    width: 1rem;
     height: 5rem;
+    z-index: 2;
+    top: 4.035rem;
+    left: 5.5rem;
     border-radius: 2px;
-    background-color: rgb(255, 255, 255);
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #fff;
 }
 
+
 .zero-one {
-    position: absolute;
-    margin-top: -5rem;
-    margin-left: 2rem;
+    left: 6rem;
+    top: 4rem;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
-    border: 25px solid rgb(255, 255, 255);
+    border: 25px solid #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 1;
 }
 
 .zero-two {
-    position: absolute;
-    margin-top: -5rem;
-    margin-left: 5.5rem;
+    left: 10rem;
+    top: 4rem;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
-    border: 25px solid rgba(240, 240, 240, 0.959);
+    border: 25px solid #fff;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    z-index: 2;
 }
 .paragraph, .textDays{
     margin-top: -0.5rem;
@@ -81,15 +82,13 @@ body {
     text-transform: uppercase;  
 }
 .textDays h1{
-    font-size: 55px;
+    font-size: 65px;
     letter-spacing: 2px;
     text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.paragraph{
-    position: absolute;
-    margin-top: 6rem;
-}
+
 .paragraph p{
-    font-size: 16px;
+    margin-top: -1rem;
+    font-size: 19px;
     text-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-}
+} 
